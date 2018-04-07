@@ -1,0 +1,56 @@
+.main, .toolbar {
+  box-sizing: border-box;
+  float: left;
+}
+
+.main {
+  width: 75%;
+
+  .grid {
+    display: flex;
+    .cell {
+      border: 2px solid #000;
+      box-sizing: border-box;
+      height: 5em;
+      margin: 0.5em;
+      width: 25%;
+    }
+  }
+}
+
+.toolbar {
+  width: 25%;
+
+  .colors {
+    display: flex;
+    .cell {
+      cursor: move;
+      border: 1px solid #000;
+      box-sizing: border-box;
+      height: 5em;
+      margin: 0.5em;
+      width: 5em;
+    }
+  }
+}
+
+.btn-container,
+.msg {
+  clear: both;
+  margin-top: 0.5em;
+  text-align: center;
+  .btn {
+    border: 1px solid #000;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.5em;
+    width: 10em;
+    &:hover {
+      background-color: #aaa;
+    }
+  }
+}
+
+
+

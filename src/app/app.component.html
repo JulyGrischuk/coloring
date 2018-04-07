@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="grid" *ngFor="let string of cells; let i = index" >
+    <div class="cell" *ngFor="let cell of string; let j = index"
+         [style.backgroundColor]="cell ? cell : 'transparent'"
+         (drop)="dropHandler($event, i, j)"
+         (dragover) ="allowDropHandler($event)"
+    ></div>
+  </div>
+</div>
+<div class="toolbar">
+  <div class="colors" *ngFor="let string of colors" >
+    <div *ngFor="let cell of string"
+         class="cell"
+         [style.backgroundColor]="cell"
+         draggable="true"
+         (dragstart)="dragStartHandler($event)"
+    ></div>
+  </div>
+</div>
+
+<div class="btn-container">
+  <div class="btn" (click)="saveGrid()">Save</div>
+  <div class="btn" (click)="loadGrid()">Load</div>
+  <div class="btn" (click)="showSavedGrid()">Show Saved (JSON)</div>
+</div>
+
+<div class="msg">{{message}}</div>
+
+
